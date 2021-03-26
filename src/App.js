@@ -12,6 +12,11 @@ function Main(props) {
   return (
     <section>
       <p>{props.paragraph}</p>
+      {
+        props.users.map((user, index) => {
+          return <p key={index}>{user}</p>
+        })
+      }
     </section>
   )
 }
@@ -24,11 +29,15 @@ function Footer(props) {
   );
 }
 
+const users = [
+  'Andrea', 'Giulia', 'Luca', 'Antonella', 'Nonna'
+]
+
 function App() {
   return (
     <div className="App">
       <Header title='Hello World!'/>
-      <Main paragraph='Lorem Ipsum Dolor'/>
+      <Main paragraph='Lorem Ipsum Dolor' users={users}/>
       <Footer year={new Date().getFullYear()}/>
     </div>
   );
