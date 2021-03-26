@@ -1,4 +1,5 @@
 import './App.css';
+import logo from './logo192.png';
 
 function Header(props) {
   return (
@@ -11,6 +12,11 @@ function Header(props) {
 function Main(props) {
   return (
     <section>
+      <img 
+        src={logo} 
+        alt="React logo" 
+        height={100}
+      />
       <p>{props.paragraph}</p>
       {
         props.users.map((user, index) => {
