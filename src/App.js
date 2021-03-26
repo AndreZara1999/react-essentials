@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function ShowMe() {
+  return <h1>I'm <span style={{ color : 'green' }}>show</span> to you becouse you <span style={{color : 'green'}}>are authorized!</span></h1>
+}
+
+function HideMe() {
+  return <h1>I'm <span style={{color : 'red'}}>hide</span> to you becouse you <span style={{color : 'red'}}>aren't authorized!</span></h1>
+}
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      { props.authorized ? <ShowMe /> : <HideMe /> }
+    </>
   );
 }
 
